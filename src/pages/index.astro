@@ -1,11 +1,10 @@
 ---
+import ThemeButton from '@/components/original/theme-button'
 import Layout from '../layouts/Layout.astro'
-import Card from '../components/Card.astro'
-import { Button } from '@/components/ui/button'
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
-    <Button>Test</Button>
+    <ThemeButton client:load />
   </main>
 </Layout>
