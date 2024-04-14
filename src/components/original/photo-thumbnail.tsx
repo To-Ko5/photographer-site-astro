@@ -1,4 +1,11 @@
-import React from 'react'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger
+} from '@/components/ui/dialog'
 
 type Props = {
   style?: string
@@ -8,12 +15,27 @@ type Props = {
 
 const PhotoThumbnail = ({ style, image, alt }: Props) => {
   return (
-    <div className={style}>
-      <picture>
-        <source srcSet={image} />
-        <img src={image} alt="icon" className="" />
-      </picture>
-    </div>
+    <Dialog>
+      <DialogTrigger>
+        <div className={style}>
+          <picture>
+            <source srcSet={image} />
+            <img src={image} alt="icon" className="" />
+          </picture>
+        </div>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogDescription>
+            <picture>
+              <source srcSet={image} />
+              <img src={image} alt="icon" className="" />
+            </picture>
+          </DialogDescription>
+          <DialogTitle>Are you absolutely sure?</DialogTitle>
+        </DialogHeader>
+      </DialogContent>
+    </Dialog>
   )
 }
 
