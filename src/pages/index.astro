@@ -1,10 +1,40 @@
 ---
 import ThemeButton from '@/components/original/theme-button'
+import Toolbar from '@/components/original/toolbar'
+import PhotoThumbnail from '@/components/original/photo-thumbnail'
 import Layout from '../layouts/Layout.astro'
+import photo1 from '../../public/photos/photo1.jpg'
+import photo2 from '../../public/photos/photo2.jpg'
+import photo3 from '../../public/photos/photo3.jpg'
+import { Image } from 'astro:assets'
+
+const items = [
+  photo1,
+  photo3,
+  photo2,
+  photo3,
+  photo2,
+  photo1,
+  photo3,
+  photo2,
+  photo1
+]
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
-    <ThemeButton client:load />
+    <div class="columns-2 md:columns-3 gap-4">
+      {
+        items.map((item) => (
+          <PhotoThumbnail client:load>
+            <div class="mb-4">
+              <Image src={item} alt="test" loading="eager" />
+            </div>
+          </PhotoThumbnail>
+        ))
+      }
+    </div>
+
+    <Toolbar client:load />
   </main>
 </Layout>

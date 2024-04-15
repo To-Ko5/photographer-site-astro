@@ -9,29 +9,16 @@ import {
 
 type Props = {
   style?: string
-  image: string
-  alt?: string
+  children: React.ReactNode
 }
 
-const PhotoThumbnail = ({ style, image, alt }: Props) => {
+const PhotoThumbnail = ({ style, children }: Props) => {
   return (
     <Dialog>
-      <DialogTrigger>
-        <div className={style}>
-          <picture>
-            <source srcSet={image} />
-            <img src={image} alt="icon" className="" />
-          </picture>
-        </div>
-      </DialogTrigger>
-      <DialogContent>
+      <DialogTrigger>{children}</DialogTrigger>
+      <DialogContent className="p-10 max-h-[90%]">
         <DialogHeader>
-          <DialogDescription>
-            <picture>
-              <source srcSet={image} />
-              <img src={image} alt="icon" className="" />
-            </picture>
-          </DialogDescription>
+          <DialogDescription>{children}</DialogDescription>
           <DialogTitle>Are you absolutely sure?</DialogTitle>
         </DialogHeader>
       </DialogContent>
