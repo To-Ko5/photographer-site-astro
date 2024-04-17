@@ -9,17 +9,23 @@ import {
 
 type Props = {
   style?: string
+  title?: string
+  description?: string
+  date?: string
+  link?: string
   children: React.ReactNode
 }
 
-const PhotoThumbnail = ({ style, children }: Props) => {
+const PhotoThumbnail = ({ style, title, children }: Props) => {
   return (
     <Dialog>
       <DialogTrigger>{children}</DialogTrigger>
       <DialogContent className="p-10 max-h-[90%]">
         <DialogHeader>
-          <DialogDescription>{children}</DialogDescription>
-          <DialogTitle>Are you absolutely sure?</DialogTitle>
+          <DialogDescription className="max-w-2xl">
+            {children}
+          </DialogDescription>
+          <DialogTitle>{title}</DialogTitle>
         </DialogHeader>
       </DialogContent>
     </Dialog>
