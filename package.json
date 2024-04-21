@@ -17,6 +17,7 @@
     "@astrojs/react": "^3.2.0",
     "@astrojs/tailwind": "^5.1.0",
     "@icons-pack/react-simple-icons": "^9.4.1",
+    "@radix-ui/react-avatar": "^1.0.4",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
